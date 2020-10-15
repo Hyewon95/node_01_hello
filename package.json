@@ -4,7 +4,7 @@
   "description": "- [노드 사이트](https://nodejs.org)\r ## 3. git 설치\r - [git-scm.com](https://git-scm.com)\r ## 4. github 가입\r ## 5. 본인의 컴퓨터에 git 사용자 등록\r - cmd창을 열고\r ```bash\r git config --global user .name 'gpdhd408'\r git config --global user .email 'gpdhd408@naver.com'\r ```",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,13 @@
   },
   "homepage": "https://github.com/Hyewon95/node_01_hello#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "moment": "^2.29.1",
+    "multer": "^1.4.2",
+    "mysql2": "^2.2.5",
+    "passport": "^0.4.1",
+    "sequelize": "^6.3.5"
   }
 }

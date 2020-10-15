@@ -11,3 +11,15 @@
 git config --global user .name 'gpdhd408'
 git config --global user .email 'gpdhd408@naver.com'
 ```
+## 6. 프로젝트 폴더를 만들고 vscode에서 연 다음, git을 설정한다.
+```bash
+git init
+git remote add origin https://github.com/Hyewon95/node_01_hello.git
+```
+
+## 7. 터미널 창에서 다음과 같이 node프로젝트를 시작한다.
+```bash
+npm init -y
+```
+
+## 8. root에 package.json 파일이 생성되면 프로젝트 생성이 완료됨.
