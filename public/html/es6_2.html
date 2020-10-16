@@ -1,0 +1,117 @@
+<script>
+    // 구조분해할당(이전 명칭 : 비구조화할당)
+    const obj={
+        a : 'A',
+        b : 'B',
+        c : 'C',
+        d : 'D',
+    };
+/* 
+    var a = obj.a;
+    var b = obj.b;
+    var c = obj.c;
+ */
+    var {a, b, c} = obj;
+    console.log(a, b, c);
+
+    var {a, d} = obj;
+    console.log(a, d);
+/* 
+    var userid = req.body.userid;
+    var userpw = req.body.userpw;
+    var {userid, userpw}=req.body;
+ */    
+/* ---------------------------------------------------------------------------------------------------- */
+    // rest operator(나머지 연산자) 혹은 spread operator(펼침 연산자)
+    const fruits = ['apple', 'banana', 'mango'];
+    const fruits2 = ['watermelon', ...fruits, 'orange'];
+    console.log(fruits2);
+
+    const newFruits = fruits.concat(fruits2);
+    console.log(newFruits);
+    
+/* 
+    var test = new Test();
+    var test2 = new Test('A');
+    var test3 = new Test('A', 'B');
+
+    class Test {
+        constructor(){
+
+        }
+        constructor(a){
+
+        }
+        constructor(a, b){
+
+        }
+    }
+ */
+
+    class Test {
+        constructor(...arg){
+            this.arg = arg;
+        }
+        print(){
+            console.log(this.arg);
+        }
+    }
+    var test = new Test();
+    var test2 = new Test('A');
+    var test3 = new Test('A', 'B');
+    test.print();
+    test2.print();
+    test3.print();
+/* ---------------------------------------------------------------------------------------------------- */
+    // ES5에서 다변인자를 갖는 함수
+    function sample(a, b){
+        var $a = a || 10;
+        var $b = b || 20;
+        console.log($a + $b);
+    }
+    sample();
+    sample(1);
+    sample(1, 2);
+/* 
+    animate({"left" : "100px"});
+    animate({"left" : "100px"}, 500);
+    animate({"left" : "100px"}, 500, "linear");
+    animate({"left" : "100px"}, 500, "linear", function(){
+
+    });
+ */
+
+    // ES6에서 다변인자를 갖는 함수
+    function sample2(a=10, b=20){
+        console.log(a + b);
+    }
+    sample2();
+    sample2(1);
+    sample2(1, 2);
+/* ---------------------------------------------------------------------------------------------------- */
+    // 함수 표현법1
+    function fn(a){
+        return a * a;
+    }
+    
+    // 함수 표현법2
+    var fn2 = function(a){
+        return a * a;
+    }
+    
+    // 함수 표현법3 : Arrow Function
+    var fn3 = (a) => {return a * a;}
+    var fn4 = (a) => a * a; // 다음과 같이 축약 가능
+    console.log(fn3(5));
+    console.log(fn4(5));
+
+    var dt = new Date();
+        function zeroPlus(v){
+        return v<10 ? '0'+v : v;
+    }
+    console.log(zeroPlus(dt.getSeconds()));
+    
+    var zeroPlus2 = v => v<10 ? '0'+v : v;
+    console.log(zeroPlus2(dt.getSeconds()));
+
+</script>
